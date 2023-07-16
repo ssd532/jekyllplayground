@@ -25,7 +25,6 @@ body a {
 
 .body {
   background-color: #FFF;
-  outline: 5px dashed red;
 }
 
 html.safari:not(.no-safari-overflow-x-fix) .body {
