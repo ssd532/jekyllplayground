@@ -1,0 +1,27 @@
+<div class="blog-posts single-post">
+    <article class="post post-large blog-single-post border-0 m-0 p-0">
+        <a href="blog-post.html">
+            <img src="{{ include.postImage }}" class="float-full" alt="" />
+        </a>
+
+        <div class="post-date ml-0">
+            <span class="day">{{ page.date | date: "%d"}}</span>
+            <span class="month">{{ page.date | date: "%b" }}</span>
+        </div>
+
+        <div class="post-content ml-0">
+
+            <h2 class="font-weight-bold"><a href="blog-post.html">Slow-cooked, lots of spices, but not spicy</a></h2>
+
+            <div class="post-meta">
+                <span><i class="far fa-user"></i> By <a href="#">{{ page.author }}</a> </span>
+                <span><i class="far fa-folder"></i>
+                    {% for category in page.categories %}
+                    <a href="#">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+                    {% endfor %}
+                </span>
+                <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+            </div>
+        </div>
+    </article>
+</div>

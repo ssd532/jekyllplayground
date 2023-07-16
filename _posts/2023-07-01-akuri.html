@@ -3,23 +3,19 @@ layout: post
 title: The Akuri
 titleNormal: "Eggs:"
 titleBold:  "The Akuri"
-date:   2022-02-21
-categories: recipe
+date: 2022-02-21
+categories:
+    - Recipe
+    - Eggs
+author: "John Doe"
 ---
 <div class="post-content ml-0">
 
-    <h2 class="font-weight-bold"><a href="blog-post.html">Slow-cooked, lots of spices, but not spicy</a></h2>
+    {% include post-meta.html postImage='/assets/images/recipe-banner.jpg' %}
 
-    <div class="post-meta">
-        <span><i class="far fa-user"></i> By <a href="#">John Doe</a> </span>
-        <span><i class="far fa-folder"></i> <a href="#">Lifestyle</a>, <a href="#">Design</a> </span>
-        <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
-    </div>
     <h3>Story</h3>
     <div class="text-4">
         <p>Parsis love their eggs. The akuri is their gift to the world.</p>
-        {% include image.html src='/assets/images/akuri.jpg' alt='Akuri image' float='right' url='https://google.com' caption='Awesome Akuri'
-        width=150 height=150 %}
         <p>The akuri is the only dish in this Set Of Four which lets you cook its spice base and refrigerate it for
             future
             use. Many Parsi aunties apparently do this as a matter of course, which is quite sensible considering how
@@ -27,6 +23,8 @@ categories: recipe
             dish to serve rapidly -- you get all the aroma of the spices, all the flavours and smoothness, but don't
             suffer
             the delay. The spice mix is the part which takes time.</p>
+        {% include image.html src='/assets/images/akuri.jpg' alt='Akuri image' float='right' url='https://google.com' caption='Awesome Akuri'
+        width=150 height=150 %}
         <p>The akuri is a strange dish. It has the most spices of this set -- yes, even more than the shakshuka -- but
             it
             does not taste spicy. In fact, it tastes quite aromatic and smooth. Well, the smoothness is partly the
