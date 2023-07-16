@@ -14,11 +14,9 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
-#      - name: Install dependencies
-#        run: |
-#          sudo apt-get -yqq install libcurl4-openssl-dev
-#          gem install jekyll bundler
-#          bundle install
+      - name: Install dependencies
+        run: |
+          gem install jekyll bundler
       - name: Build site
         run: |
           cd jekyll-dnought
