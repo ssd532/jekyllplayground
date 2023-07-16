@@ -25,7 +25,6 @@ jobs:
           sudo gem install jekyll bundler
       - name: Build site
         run: |
-          cd jekyll-dnought
           sudo bundle exec jekyll build
       - name: Deploy to S3
         id: deploy
@@ -34,5 +33,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
         run: |
-          cd jekyll-dnought
           aws s3 sync ./_site/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --acl public-read --delete --cache-control max-age=604800
