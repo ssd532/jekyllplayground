@@ -1,23 +1,23 @@
 /* Add here all your CSS customizations */
 
-.align-left {
+.float-left {
     float: left;
     margin: 0 20px 20px 0;
 }
-.align-right {
+.float-right {
     float: right;
     margin: 0 0 20px 20px;
 }
-.align-full {
+.float-full {
     width: 100%;
     margin: 0 0 20px 0;
 }
-.align-left img,
-.align-right img {
+.float-left img,
+.float-right img {
     width: 50%;
     height: auto;
 }
-.align-full img {
+.float-full img {
     width: 100%;
     height: auto;
 }
