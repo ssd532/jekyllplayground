@@ -5,7 +5,7 @@ titleNormal: "Eggs"
 titleBold: "The Akuri MD"
 date:   2021-09-01
 categories: recipe, eggs
-author: John Doe
+author: santoshs
 parent: "Photography"
 ---
 
