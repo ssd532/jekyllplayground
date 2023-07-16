@@ -1,0 +1,20 @@
+<div class="{% if include.float == 'left' %}float-left{% elsif include.float == 'right' %}float-right{% else %}float-full{% endif %}">
+    {% if include.url %}
+    <a href="{{ include.url }}" target="_blank">
+        {% endif %}
+        <video id="video-player" class="video-js" controls preload="auto" width="{{ include.width }}" height="{{ include.height }}"
+               poster="{{ include.poster }}" data-setup="{}">
+            <source src="{{ include.src }}" type='video/mp4'>
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
+
+        {% if include.url %}
+    </a>
+    {% endif %}
+    {% if include.caption %}
+    <p class="caption-text">{{ include.caption }}</p>
+    {% endif %}
+</div>

@@ -13,15 +13,17 @@
     margin: 0 0 20px 0;
 }
 .float-left img,
-.float-right img {
+.float-right img,
+.float-left video,
+.float-right video {
     width: 50%;
     height: auto;
 }
-.float-full img {
+.float-full img,
+.float-full video {
     width: 100%;
     height: auto;
 }
-
 .caption-text {
     font-size: 10px;
     font-style: italic;
