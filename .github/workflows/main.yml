@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 #      - name: Set up Ruby
 #        uses: ruby/setup-ruby@v1
 #        with:
@@ -27,7 +27,9 @@ jobs:
 #        run: |
 #          sudo bundle exec jekyll build
       - name: Jekyll Build
-        uses: kshehadeh/jekyll-s3-action@0.1
+        uses: nielsdelestinne/jekyll-build@v1.0.0
+        with:
+          verbose: true
       - name: Deploy to S3
         id: deploy
         env:
