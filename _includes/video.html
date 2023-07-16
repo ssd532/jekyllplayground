@@ -2,7 +2,7 @@
     {% if include.url %}
     <a href="{{ include.url }}" target="_blank">
         {% endif %}
-        <video id="video-player" class="video-js" controls preload="auto" width="{{ include.width }}" height="{{ include.height }}"
+        <video id="video-player" controls preload="auto" width="{{ include.width }}" height="{{ include.height }}"
                poster="{{ include.poster }}" data-setup="{}">
             <source src="{{ include.src }}" type='video/mp4'>
             <p class="vjs-no-js">
