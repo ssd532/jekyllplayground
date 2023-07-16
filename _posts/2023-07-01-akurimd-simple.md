@@ -1,6 +1,6 @@
 ---
-layout: post
-title:  "The Akuri Markdown"
+layout: simple
+title:  "The Akuri Markdown (Simple)"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
 date:   2021-09-01
