@@ -15,17 +15,19 @@ jobs:
 #        with:
 #          ruby-version: 3.0
 #          bundler-cache: true
-      - name: Install dependencies
-        run: |
-          sudo apt-get install ruby-full build-essential zlib1g-dev
-          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-          source ~/.bashrc
-          sudo gem install jekyll bundler
-      - name: Build site
-        run: |
-          sudo bundle exec jekyll build
+#      - name: Install dependencies
+#        run: |
+#          sudo apt-get install ruby-full build-essential zlib1g-dev
+#          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+#          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+#          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+#          source ~/.bashrc
+#          sudo gem install jekyll bundler
+#      - name: Build site
+#        run: |
+#          sudo bundle exec jekyll build
+      - name: Jekyll Build
+        uses: kshehadeh/jekyll-s3-action@0.1
       - name: Deploy to S3
         id: deploy
         env:
