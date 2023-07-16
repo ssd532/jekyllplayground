@@ -1,8 +1,8 @@
-<h5 class="font-weight-bold pt-4">Documents</h5>
+<h5 class="font-weight-bold pt-4">Posts</h5>
 <ul class="nav nav-list flex-column mb-5">
     {% assign docs = site.docs | sort: 'path' %}
     {% for doc in docs %}
-    {% if doc.has_children %}
+    {% if doc.directory %}
     <li class="nav-item">
         <a class="nav-link" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
         <ul>
