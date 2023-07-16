@@ -1,13 +1,143 @@
----
-layout: default
----
-<div class="container py-4">
-    <div class="row">
-        <div class="col">
-            <div class="blog-posts single-post">
-                {% include page-header.html %}
-                {{ content }}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Post Left Sidebar | Porto - Responsive HTML5 Template</title>
+
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap/css/bootstrap.min.css' | relative_url}}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/fontawesome-free/css/all.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/animate/animate.compat.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/simple-line-icons/css/simple-line-icons.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/owl.carousel/assets/owl.carousel.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/owl.carousel/assets/owl.theme.default.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/magnific-popup/magnific-popup.min.css' | relative_url }}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url}}">
+    <link rel="stylesheet" href="{{ '/assets/css/theme-elements.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/theme-blog.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/theme-shop.css' | relative_url }}">
+    <!-- Demo CSS -->
+
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/skins/default.css' | relative_url }}">
+
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+    <!-- Head Libs -->
+    <script src="vendor/modernizr/modernizr.min.js"></script>
+
+</head>
+<body>
+<div id="fb-root"></div>
+
+<div class="body">
+
+    {% include header.html %}
+
+    <div role="main" class="main">
+
+        <section class="page-header page-header-modern bg-color-secondary page-header-md">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 align-self-center p-static order-2 order-md-1">
+                        <h1 class="text-dark text-12 text-uppercase">{{ page.titleNormal }}: <strong>{{ page.titleBold }}</strong></h1>
+                        <!-- <span class="sub-title text-dark">Check out our Latest News!</span> -->
+                    </div>
+
+                    <div class="col-md-4 text-dark align-self-center order-1 order-md-2">
+
+
+                        <ul class="breadcrumb d-block text-4 text-md-right">
+                            <li><a href="#">Jaamva chalo ji</a></li>
+                            <li class="active">Recipes</li>
+                            <li class="active">Eggs, scrambled</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <div class="container py-4">
+
+            <div class="row">
+                <div class="col-lg-3">
+                    {% include sidebar.html %}
+                </div>
+                <div class="col-lg-9">
+                    <div class="blog-posts single-post">
+
+                        <article class="post post-large blog-single-post border-0 m-0 p-0">
+                            <div class="post-image ml-0">
+                                <a href="blog-post.html">
+                                    <img src="img/blog/wide/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                </a>
+                            </div>
+
+                            <div class="post-content ml-0">
+
+                                {{ content }}
+
+                                <div class="post-block mt-4 pt-2 post-author">
+                                    <h4 class="mb-3">Author</h4>
+                                    <div class="img-thumbnail img-thumbnail-no-borders d-block pb-3">
+                                        <a href="blog-post.html">
+                                            <img src="img/avatars/avatar.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <p><strong class="name"><a href="#" class="text-4 pb-2 pt-2 d-block">John Doe</a></strong></p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui. </p>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </div>
+
+    {% include footer.html %}
+
+    {% include footer-copyright.html %}
 </div>
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-12345678-1', 'auto');
+    ga('send', 'pageview');
+</script>
+ -->
+
+</body>
+</html>

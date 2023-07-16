@@ -1,0 +1,22 @@
+<h5 class="font-weight-bold pt-4">Documents</h5>
+<ul class="nav nav-list flex-column mb-5">
+    {% assign docs = site.docs | sort: 'path' %}
+    {% for doc in docs %}
+    {% if doc.has_children %}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+        <ul>
+            {% for child in docs %}
+            {% if child.parent == doc.title %}
+            <li class="nav-item"><a class="nav-link" href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% elsif doc.parent == null %}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>

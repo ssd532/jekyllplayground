@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "The Akuri Markdown"
+title:  "Engineers too listen to music and make music"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
 date:   2021-09-01
 categories: recipe, eggs
 author: John Doe
+parent: "Audio"
 ---
 
 
