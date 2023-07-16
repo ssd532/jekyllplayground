@@ -1,0 +1,12 @@
+<div class="{% if include.align == 'left' %}align-left{% elsif include.align == 'right' %}align-right{% else %}align-full{% endif %}">
+    {% if include.url %}
+    <a href="{{ include.url }}" target="_blank">
+    {% endif %}
+        <img src="{{ include.src }}" alt="{{ include.alt }}" style="width:{{ include.width }}px; height:{{ include.height }}px;">
+    {% if include.url %}
+    </a>
+    {% endif %}
+    {% if include.caption %}
+    <p class="caption-text">{{ include.caption }}</p>
+    {% endif %}
+</div>
