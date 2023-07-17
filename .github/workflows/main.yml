@@ -5,6 +5,8 @@ on:
 #      - main
 #      - jekyllonly
   workflow_dispatch:
+      branches:
+        - jekyllonly
 
 jobs:
   build:
@@ -18,7 +20,7 @@ jobs:
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:
-          args: --follow-symlinks --delete
+          args: --exclude 'tmp/*' --follow-symlinks --delete
         env:
           SOURCE_DIR: "_site"
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
