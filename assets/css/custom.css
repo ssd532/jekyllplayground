@@ -28,3 +28,16 @@
     font-size: 10px;
     font-style: italic;
 }
+
+.nav-list .nav-link {
+    border: none !important;
+}
+
+ul.nav-list li.second-level a:before {
+    top: 6px;
+}
+
+ul.nav-list li.second-level {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
