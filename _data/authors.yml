@@ -1,7 +1,12 @@
 prakashp:
   name: "Prakash Patil"
-  description: "Prakash is a software engineer who lives in Mumbai. He loves reading, writing, and hanging out with friends. In his spare time, he likes to play cricket and watch movies."
+  descriptionShort: "Prakash is a software engineer who lives in Mumbai. He loves reading, writing, and hanging out with friends. In his spare time, he likes to play cricket and watch movies."
+  descriptionLong: "Prakash is a software engineer who lives in Mumbai. He loves reading, writing, and hanging out with friends. In his spare time, he likes to play cricket and watch movies.\n\n Prakash's passion for literature has inspired him to start his own blog, where he shares insightful book reviews and thought-provoking articles on various topics. "
+  photo: "/assets/images/prakashp.jpg"
 
 santoshs:
   name: "Santosh Sinha"
-  description: "Santosh is a software engineer who lives in New Delhi. He loves reading, writing, and hanging out with friends. In his spare time, he likes to play cricket and watch movies."
+  descriptionShort: "Santosh is a software engineer who lives in New Delhi. He loves reading, writing, and hanging out with friends. In his spare time, he likes to play cricket and watch movies."
+  descriptionLong: "Santosh is a software engineer who lives in New Delhi. He loves reading, writing, and hanging out with friends. In his spare time, he likes to play cricket and watch movies. \n\n Santosh's passion for literature has inspired him to start his own blog, where he shares insightful book reviews and thought-provoking articles on various topics."
+  photo: "/assets/images/santoshs.jpg"
+

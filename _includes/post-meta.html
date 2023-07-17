@@ -15,6 +15,7 @@
 
             <div class="post-meta">
                 <span><i class="far fa-user"></i> By <a href="#">{{ page.author }}</a> </span>
+                <span><i class="far fa-user"></i> By <a href="/authors/{{ page.author }}.html">{{ site.data.authors[page.author].name }}</a></span>
                 <span><i class="far fa-folder"></i>
                     {% for tag in page.tags %}
                     <a href="{{ site.baseurl }} /tags/{{ tag | downcase }}.html">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}

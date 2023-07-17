@@ -1,0 +1,8 @@
+---
+layout: home
+---
+{% assign author = site.data.authors[page.author] %}
+<h1>{{ author.name }}</h1>
+{% include image.html src=author.photo alt=author.name float='left' url='https://google.com' caption=author.name
+width=100 height=100 %}
+<p>{{ author.descriptionLong | markdownify}}</p>
