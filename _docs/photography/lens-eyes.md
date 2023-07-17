@@ -4,7 +4,7 @@ title:  "Lenses and eyes"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
 date:   2021-09-01
-categories: recipe, eggs
+categories: photography camera lens
 author: santoshs
 parent: "Photography"
 ---

@@ -1,0 +1,14 @@
+---
+layout: null
+---
+[
+{% for doc in site.docs %}
+{
+"title"    : "{{ doc.title | escape }}",
+"category" : "{{ doc.categories | join: ', '}}",
+"tags"     : "{{ doc.tags  | join: ', ' }}",
+"url"      : "{{ doc.url }}{{ post.url }}",
+"date"     : "{{ doc.date }}"
+} {% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
