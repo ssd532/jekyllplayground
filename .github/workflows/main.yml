@@ -5,13 +5,16 @@ on:
 #      - main
 #      - jekyllonly
   workflow_dispatch:
-      branches:
-        - jekyllonly
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Fail if main branch
+        if: github.ref == 'refs/heads/main'
+        run: | 
+          echo "Not allowed to deploy main branch"
+          exit 1
       - uses: actions/checkout@v2
       - name: Jekyll Build
         uses: nielsdelestinne/jekyll-build@v1.0.0
