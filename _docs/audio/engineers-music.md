@@ -3,6 +3,7 @@ layout: post
 title:  "Engineers too listen to music and make music"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
+titleMeta: "Slow-cooked, lots of spices, but not spicy"
 date:   2021-09-01
 categories: audio music
 tags: audio music

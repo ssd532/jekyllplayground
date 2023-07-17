@@ -3,6 +3,7 @@ layout: post
 title:  "Lenses and eyes"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
+titleMeta: "Slow-cooked, lots of spices, but not spicy"
 date:   2021-09-03
 categories: photography camera lens
 tags: photography camera lens

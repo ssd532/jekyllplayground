@@ -3,6 +3,7 @@ layout: post
 title:  "Headphones"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
+titleMeta: "Slow-cooked, lots of spices, but not spicy"
 date:   2021-08-01
 categories: audio headphones
 tags: audio headphones
