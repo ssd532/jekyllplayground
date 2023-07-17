@@ -3,8 +3,9 @@ layout: post
 title:  "Headphones"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
-date:   2021-09-01
+date:   2021-08-01
 categories: audio headphones
+tags: audio headphones
 author: santoshs
 parent: "Audio"
 ---

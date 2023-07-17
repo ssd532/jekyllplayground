@@ -3,8 +3,9 @@ layout: post
 title:  "Interesting drivers"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
-date:   2021-09-01
+date:   2021-09-02
 categories: audio speaker
+tags: audio speaker
 author: prakashp
 parent: "Audio"
 ---

@@ -1,0 +1,14 @@
+---
+layout: home
+---
+<h1>{{ page.tag }}</h1>
+<ul>
+    {% for doc in site.docs %}
+    {% if doc.tags contains page.tag %}
+    <li>
+        <a href="{{ doc.url }}">{{ doc.title }}</a>
+        <small>{{ doc.date | date: "%d %b" }}</small>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>

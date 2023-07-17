@@ -3,8 +3,9 @@ layout: post
 title:  "Lenses and eyes"
 titleNormal: "Eggs"
 titleBold: "The Akuri MD"
-date:   2021-09-01
+date:   2021-09-03
 categories: photography camera lens
+tags: photography camera lens
 author: santoshs
 parent: "Photography"
 ---
