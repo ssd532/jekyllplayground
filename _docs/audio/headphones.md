@@ -9,6 +9,7 @@ categories: audio headphones
 tags: audio headphones
 author: santoshs
 parent: "Audio"
+permalink: /audio/headphones
 ---
 
 

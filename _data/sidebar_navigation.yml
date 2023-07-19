@@ -1,0 +1,31 @@
+- title: Photography
+  directory: true
+  children:
+    - title: Lens and eyes
+      url: /photography/lens-eyes.html
+- title: Audio
+  directory: true
+  children:
+    - title: Drivers
+      url: /audio/drivers
+    - title: Engineers and music
+      url: /audio/engineers-music
+    - title: Headphones
+      url: /audio/headphones
+- title: Recipes
+  directory: true
+  children:
+    - title: Akuri
+      url: /recipes/akuri
+    - title: Butter Chicken
+      url: /recipes/butter-chicken
+- title: test
+  children:
+    - title: test l1
+      url: /test/test3
+    - title: test l1-2
+      children:
+        - title: test l2-1
+          url: /test/test3/test5
+        - title: test l2-2
+          url: /test/test3/test6

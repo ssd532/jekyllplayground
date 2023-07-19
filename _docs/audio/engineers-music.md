@@ -9,6 +9,7 @@ categories: audio music
 tags: audio music
 author: prakashp
 parent: "Audio"
+permalink: /audio/engineers-music
 ---
 
 

@@ -9,6 +9,7 @@ categories: photography camera lens
 tags: photography camera lens
 author: santoshs
 parent: "Photography"
+permalink: photography/lens-eyes.html
 ---
 
 
