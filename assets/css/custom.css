@@ -1,0 +1,43 @@
+/* Add here all your CSS customizations */
+
+.float-left {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+.float-right {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+.float-full {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.float-left img,
+.float-right img,
+.float-left video,
+.float-right video {
+    width: 50%;
+    height: auto;
+}
+.float-full img,
+.float-full video {
+    width: 100%;
+    height: auto;
+}
+.caption-text {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.nav-list .nav-link {
+    border: none !important;
+}
+
+ul.nav-list li.second-level a:before {
+    top: 6px;
+}
+
+ul.nav-list li.second-level {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

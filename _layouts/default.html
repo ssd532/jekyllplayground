@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap/css/bootstrap.min.css' | relative_url}}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/fontawesome-free/css/all.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/animate/animate.compat.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/simple-line-icons/css/simple-line-icons.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/owl.carousel/assets/owl.carousel.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/owl.carousel/assets/owl.theme.default.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/magnific-popup/magnific-popup.min.css' | relative_url }}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url}}">
+    <link rel="stylesheet" href="{{ '/assets/css/theme-elements.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/theme-blog.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/theme-shop.css' | relative_url }}">
+    <!-- Demo CSS -->
+
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/skins/default.css' | relative_url }}">
+
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+</head>
+<body>
+
+{% include header.html %}
+
+            {{ content }}
+
+{% include footer-copyright.html %}
+
+<footer>
+    <p>Copyright &copy; {{ site.time | date: '%Y' }} My Website. All rights reserved.</p>
+</footer>
+</body>
+</html>

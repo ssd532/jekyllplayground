@@ -1,0 +1,33 @@
+<nav class="collapse header-mobile-border-top">
+    <ul class="nav nav-pills" id="mainNav">
+        {% for item in site.data.navigation %}
+        <li class="dropdown">
+            <a class="dropdown-item dropdown-toggle" href="{{ item.url }}">
+                {{ item.title }}
+            </a>
+            {% if item.children %}
+            <ul class="dropdown-menu">
+                {% for child in item.children %}
+                {% if child.children %}
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item" href="{{ child.url }}">{{ child.title }}</a>
+                    <ul class="dropdown-menu">
+                        {% for grandchild in child.children %}
+                        <li><a class="dropdown-item" href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li>
+                    <a class="dropdown-item" href="{{ child.url }}">
+                        {{ child.title }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

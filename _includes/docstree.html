@@ -1,0 +1,37 @@
+<h5 class="font-weight-bold pt-4">Documents</h5>
+<ul class="nav nav-list flex-column mb-5">
+    {% for doc in site.data.sidebar_navigation %}
+    {% if doc.children %}
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" href="#submenu{{ forloop.index }}">{{ doc.title }}</a>
+        <div id="submenu{{ forloop.index }}" class="collapse">
+            <ul class="flex-column nav">
+                {% for child in doc.children %}
+                {% if child.children %}
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-toggle="collapse" href="#submenu-{{ forloop.index }}">{{ child.title }}</a>
+                    <div id="submenu-{{ forloop.index }}" class="collapse">
+                        <ul class="flex-column nav">
+                            {% for grandchild in child.children %}
+                            <li class="nav-item second-level">
+                                <a class="nav-link py-0" href="{{ grandchild.url }}">{{ grandchild.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                {% else %}
+                <li class="nav-item second-level">
+                    <a class="nav-link py-0" href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ doc.url }}">{{ doc.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>

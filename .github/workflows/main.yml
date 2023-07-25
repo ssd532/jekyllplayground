@@ -1,37 +1,32 @@
 name: Build and Deploy to AWS S3
 on:
-  push:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
+#      - jekyllonly
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-#      - name: Set up Ruby
-#        uses: ruby/setup-ruby@v1
-#        with:
-#          ruby-version: 3.0
-#          bundler-cache: true
-      - name: Install dependencies
-        run: |
-          sudo apt-get install ruby-full build-essential zlib1g-dev
-          echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-          echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-          echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-          source ~/.bashrc
-          sudo gem install jekyll bundler
-      - name: Build site
-        run: |
-          cd jekyll-dnought
-          sudo bundle exec jekyll build
+      - name: Fail if main branch
+        if: github.ref == 'refs/heads/main'
+        run: | 
+          echo "Not allowed to deploy main branch"
+          exit 1
+      - uses: actions/checkout@v2
+      - name: Jekyll Build
+        uses: nielsdelestinne/jekyll-build@v1.0.0
+        with:
+          verbose: true
       - name: Deploy to S3
-        id: deploy
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --exclude 'theme-pages/*' --follow-symlinks --delete
         env:
+          SOURCE_DIR: "_site"
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
-        run: |
-          cd jekyll-dnought
-          aws s3 sync ./_site/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --acl public-read --delete --cache-control max-age=604800
+          AWS_REGION: 'us-west-2'

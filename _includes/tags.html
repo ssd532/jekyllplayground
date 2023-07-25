@@ -1,0 +1,11 @@
+<h5 class="font-weight-bold pt-4 mb-2">Tags</h5>
+<div class="mb-3 pb-1">
+    {% assign all_tags = "" | split: ',' %}
+    {% for doc in site.docs %}
+    {% assign all_tags = all_tags | concat: doc.tags %}
+    {% endfor %}
+    {% assign all_tags = all_tags | uniq %}
+    {% for tag in all_tags %}
+    <a href="/tags/{{ tag | downcase }}.html"><span class="badge badge-dark badge-sm badge-pill text-uppercase px-2 py-1 mr-1">{{ tag }}</span></a>
+    {% endfor %}
+</div>

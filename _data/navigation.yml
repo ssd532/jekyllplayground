@@ -1,0 +1,28 @@
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: Blog Posts
+  url: /docs/
+  children:
+    - title: Photography
+      url: /docs/photography/
+      children:
+        - title: Lens and eyes
+          url: /photography/lens-eyes.html
+    - title: Audio
+      url: /docs/audio/
+      children:
+        - title: Drivers
+          url: /audio/drivers
+        - title: Engineers and music
+          url: /audio/engineers-music
+        - title: Headphones
+          url: /audio/headphones
+    - title: Recipes
+      children:
+        - title: Akuri
+          url: /recipes/akuri
+        - title: Butter Chicken
+          url: /recipes/butter-chicken
+
