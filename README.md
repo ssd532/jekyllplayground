@@ -91,3 +91,7 @@ Search box UI is taken from the theme.
 ## Deployment
 
 We use Github Actions for CI/CD. We have configured a workflow that builds the Jekyll site and deploys it to S3.
+
+## Run 
+
+`bundle exec jekyll serve`
