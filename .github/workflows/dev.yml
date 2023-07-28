@@ -1,0 +1,32 @@
+name: Build and Deploy to AWS S3
+on:
+#  push:
+#    branches:
+#      - main
+#      - jekyllonly
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if main branch
+        if: github.ref == 'refs/heads/main'
+        run: | 
+          echo "Not allowed to deploy main branch"
+          exit 1
+      - uses: actions/checkout@v2
+      - name: Jekyll Build
+        uses: nielsdelestinne/jekyll-build@v1.0.0
+        with:
+          verbose: true
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --exclude 'theme-pages/*' --follow-symlinks --delete
+        env:
+          SOURCE_DIR: "_site"
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_NAME_DEV }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+          AWS_REGION: 'us-west-2'
