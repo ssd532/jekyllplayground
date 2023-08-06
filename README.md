@@ -140,7 +140,11 @@ Create the following bucket policy:
 		{
 			"Sid": "AllowWriteFromAllIP",
 			"Effect": "Allow",
-			"Principal": "*",
+			"Principal": {
+                "AWS": [
+                  "arn:aws:iam::user_with_s3_access"
+                ]
+            },
 			"Action": [
 				"s3:PutObject",
 				"s3:DeleteObject"
