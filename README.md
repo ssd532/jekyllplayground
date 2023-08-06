@@ -91,3 +91,80 @@ Search box UI is taken from the theme.
 ## Deployment
 
 We use Github Actions for CI/CD. We have configured a workflow that builds the Jekyll site and deploys it to S3.
+
+## Hosting setup
+
+Our setup: browser -> Caddy -> OAuth2 Proxy -> static site on S3
+
+Caddy works as a reverse proxy that handles SSL termination. Following is the config file for Caddy:
+
+```
+# https://caddyserver.com/docs/caddyfile
+# our setup: browser -> caddy -> oauth2 proxy -> s3 static site
+http://website.domain {
+    redir https://website.domain{uri}
+}
+
+https://website.domain {
+    reverse_proxy localhost:4180 {
+        header_up Host s3.website.domain # rewrite the host header to the s3 hosting domain
+    }
+    tls admin@example.com # email address for letsencrypt
+}
+```
+
+We use OAuth2 Proxy for authentication. It integrates with OIDC provider. Sample config with Keycloak:
+
+```
+http_address="0.0.0.0:4180"
+cookie_secret="cookie_secret" # check the oauth2 proxy docs
+provider="oidc"
+email_domains="*"
+oidc_issuer_url="https://auth.keycloak.server/auth/realms/realmname"
+client_id="client_id_in_keycloak"
+client_secret="client_secret_in_keycloak"
+cookie_secure="false"
+scope="openid"
+redirect_url="https://website.domain/oauth2/callback" # it must be /oauth2/callback -- check the oauth2 proxy docs
+upstreams="http://s3.website.domain/"
+```
+
+Enable static website hosting on S3
+
+Create the following bucket policy:
+```json
+{
+	"Version": "2012-10-17",
+	"Id": "S3PolicyId1",
+	"Statement": [
+		{
+			"Sid": "AllowWriteFromAllIP",
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": [
+				"s3:PutObject",
+				"s3:DeleteObject"
+			],
+			"Resource": "arn:aws:s3:::s3bucketname/*"
+		},
+		{
+			"Sid": "AllowReadFromSpecificIP",
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::s3bucketname/*",
+			"Condition": {
+				"IpAddress": {
+					"aws:SourceIp": "xxx.xxx.xxx.xxx/32"
+				}
+			}
+		}
+	]
+}
+```
+This policy will allow PUT and DELETE from all IPs and GET from a specific IP. This is useful for uploading the site from Github Actions and accessing the site from the reverse proxy.
+
+
+## Run locally
+
+`bundle exec jekyll serve`
