@@ -14,8 +14,9 @@
     <meta name="author" content="okler.net">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/images/d-favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{{ '/assets/images/d-favicon.ico' | relative_url }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -48,7 +49,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
     <!-- Head Libs -->
-    <script src="vendor/modernizr/modernizr.min.js"></script>
+    <script src="{{ '/assets/vendor/modernizr/modernizr.min.js' | relative_url }}"></script>
+
 
 </head>
 
@@ -95,7 +97,7 @@
                         <article class="post post-large blog-single-post border-0 m-0 p-0">
                             <div class="post-image ml-0">
                                 <a href="blog-post.html">
-                                    <img src="img/blog/wide/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                    <img src="/assets/images/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                 </a>
                             </div>
 
